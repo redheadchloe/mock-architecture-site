@@ -47,7 +47,7 @@ a.logo {
 
 .grid {
   display: grid;
-  grid-template-columns: 50% 40%;
+  grid-template-columns: repeat(2,1fr);
   place-items: center;
   justify-content: center;
 }
@@ -109,6 +109,8 @@ button {
 /* key visual */
 .top-wrapper {
   height: 80vh;
+  width: 90vw;
+  margin: auto;
   position: absolute;
   display: none;
 }
