@@ -1,0 +1,370 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-1: #657e99;
+}
+
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a, input{
+  padding: 0.5rem 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  width: 90vw;
+  margin: auto;
+}
+
+a.logo {
+  font-size: 1.5rem;
+}
+
+.flex {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50% 40%;
+  place-items: center;
+  justify-content: center;
+}
+
+nav {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  align-items: center;
+}
+
+ul {
+  text-transform: uppercase;
+  justify-self: stretch;
+}
+
+a{
+  position: relative;
+}
+
+ul li a::after, a.active::after{
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  height: 2px;
+  background: #333;
+  width: 0;
+}
+
+ul li a:hover::after, a.active::after{
+  left: 0;
+  width: 100%;
+  transition: 0.3s ease-in;
+}
+
+input {
+  border: none;
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  width: 4rem;
+  justify-self: end;
+}
+
+input:focus {
+  outline: none;
+  transition: .3s linear;
+  width: 6rem;
+}
+
+button {
+  display: none;
+}
+
+/* key visual */
+.top-wrapper {
+  height: 80vh;
+  position: absolute;
+  display: none;
+}
+.top-wrapper.active{
+  display: grid;
+}
+
+.top-wrapper.active img{
+  animation: fadeIn .5s linear ;
+}
+
+@keyframes fadeIn {
+  from{opacity:0;}
+  to{opacity: 1;}
+} 
+
+
+.img-wrapper {
+  position: relative;
+}
+
+img {
+  max-width: 500px;
+  max-height: 600px;
+
+}
+
+.img-wrapper::before {
+  content: '';
+  width: 8rem;
+  height: 50%;
+  z-index: 1;
+  display: block;
+  position: absolute;
+  background: var(--accent-1);
+  transform: translateX(-50%) translateY(50%);
+  animation: expand .7s ease-in;
+}
+
+@keyframes expand {
+  0% {
+  transform: translateX(-50%) translateY(50%) scaleY(0);
+  }
+  100% {
+  transform: translateX(-50%) translateY(50%) scaleY(1);
+  }
+}
+
+.img-wrapper::before {
+  content: attr(data-text);
+  writing-mode: vertical-lr;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  letter-spacing: 3;
+}
+
+.img-wrapper::after {
+  content: '';
+  width: 8rem;
+  height: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--accent-1);
+  transform: translateX(50%);
+  animation: up .7s 1s ease-in forwards;
+}
+
+
+@keyframes up {
+  from {
+  transform: translateX(50%);
+  height: 0;
+  }
+  to {
+  transform: translateX(50%);
+  height: 30%;
+  }
+}
+
+.text-wrapper{
+width: 80%;}
+
+.text-wrapper h2 {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+.text-wrapper p{
+  padding: 1rem 0 1rem 3rem;
+  position: relative;
+}
+
+.text-wrapper p::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 2px;
+  height: 0;
+  background: var(--accent-1);
+  animation: height .4s 2s linear forwards;
+}
+
+@keyframes height {
+  from{height: 0;}
+  to{height: 100%;}
+}
+
+/* social icons */
+
+.social-wrapper {
+  display: grid;
+  height: 50%;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.social-wrapper a {
+  display: block;
+  writing-mode: vertical-lr;
+}
+
+
+/* bottom content */
+.bottom-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 10vh;
+  width: 90vw;
+  place-items: center;
+  position: fixed;
+  bottom: 0;
+}
+.bottom-wrapper  a{margin-right: 1rem;}
+.button-wrapper {
+      justify-self: start;
+}
+
+
+.city-wrapper {
+      justify-self: end;
+}
+.city-wrapper span{display: none;}
+.city-wrapper span.active {display: grid;}
+
+@media screen and (max-width: 768px) {
+  button {
+    display: block;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 1.5rem;
+
+    justify-self: end;
+    height: 30px;
+    overflow: hidden;
+  }
+  button span {
+    display: block;
+    height: 3px;
+    width: 1.5rem;
+    background: #333;
+  }
+  button span:first-child {
+    width: 50%;
+            transform: translateX(100%);
+  }
+  button span:nth-child(2) {
+            transform: translateY(4px) translateX(50%);
+    width: 70%;
+  }
+  button span:last-child {
+            transform: translateY(8px);
+  }
+  button:hover span:first-child {
+            transform: translateX(0);
+    width: 100%;
+    transition: 0.3s;
+  }
+  button:hover span:nth-child(2) {
+    transform: translateX(0%) translateY(4px);
+    width: 100%;
+    transition: 0.3s;
+  }
+  button.active{z-index: 10;}
+  button.active span:first-child {
+            transform: rotate(405deg) translateY(2px);
+    width: 100%;
+    transition: 0.4s;
+  }
+  button.active span:nth-child(2) {
+    display: none;
+  }
+  button.active span:last-child {
+  transform: rotate(-45deg) translateY(-2px) translateX(-1px);
+
+    transition: 0.4s;
+  }
+  ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0vh;
+    overflow: hidden;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+    transition: 0.4s ease-in;
+  }
+  ul.active {
+    padding: 30vh 0;
+    height: 100vh;
+
+  }
+  ul.active li {
+    margin-bottom: 1rem;
+  }
+  ul.flex {
+  flex-direction: column;
+  }
+}
+
+@media(max-width:600px) {
+  .grid{
+    grid-template-columns: auto;
+    grid-gap: 5vh;
+  }
+  .top-wrapper{
+    min-height: 100vh;
+    width: 80vw;
+    margin: auto;
+    margin: 10vh 0;
+  }
+  img{width: 300px;
+  height: 400px;}
+
+  .img-wrapper::before, .img-wrapper::after{
+    width: 4rem;
+  }
+
+  .bottom-wrapper{
+    grid-template-columns: 30% 50% 20%;
+    place-items: end center;
+    margin-top: 10vh;
+  }
+
+}/*=============== max-width:600px ====================*/
