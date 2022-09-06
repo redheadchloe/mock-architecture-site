@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
 *,
 *::before,
 *::after {
@@ -16,12 +18,18 @@ a {
   color: #333;
 }
 
+img,span{display: inline-block;}
+
 a, input{
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
 }
 
 li {
   list-style-type: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
 }
 
 html {
@@ -52,6 +60,21 @@ a.logo {
   justify-content: center;
 }
 
+.section{
+  padding: 10vh 0;
+  border-bottom: 2px solid #333;
+}
+
+.mb-2{
+  margin-bottom: 2rem;
+}
+.mb-5{
+  margin-bottom: 5rem;
+}
+.m-1{
+  margin: 1rem 0;
+}
+
 nav {
   padding: 2rem 0;
   display: grid;
@@ -68,7 +91,27 @@ a{
   position: relative;
 }
 
-ul li a::after, a.active::after{
+
+ul li a::before{
+  content: attr(data-jp);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  transform: translateY(200%);
+}
+
+ul li a:hover::before{
+  width: max-content;
+  visibility: visible;
+  transform: translateY(100%);
+  transition: .4s ease-in-out;
+}
+
+
+ul li a::after, a.active::after, .bottom-wrapper a::after, .social-wrapper a::after{
   content: '';
   position: absolute;
   display: block;
@@ -80,10 +123,40 @@ ul li a::after, a.active::after{
   width: 0;
 }
 
-ul li a:hover::after, a.active::after{
+ul li a:hover::after, a.active::after, .bottom-wrapper a:hover:after, .social-wrapper a:hover:after{
   left: 0;
   width: 100%;
   transition: 0.3s ease-in;
+}
+
+
+
+.section-btn{
+  text-align: end;
+}
+
+.section-btn a{
+  width: 20rem;
+  border: 1px solid #333;
+  padding: 1rem 3rem;
+  position: relative;
+}
+
+.section-btn a:hover{
+  opacity: .7;
+}
+.section-btn a span{
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+}
+
+
+.section-btn a:hover span{
+  left: 85%;
+  opacity: .7;
+  transform: scaleX(1.4);
+  transition: .4s ease-in-out;
 }
 
 input {
@@ -111,7 +184,6 @@ button {
   height: 80vh;
   width: 90vw;
   margin: auto;
-  position: absolute;
   display: none;
 }
 .top-wrapper.active{
@@ -133,9 +205,11 @@ button {
 }
 
 img {
-  max-width: 500px;
-  max-height: 600px;
-
+  max-width: 600px;
+  max-height: 800px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .img-wrapper::before {
@@ -161,7 +235,7 @@ img {
 
 .img-wrapper::before {
   content: attr(data-text);
-  writing-mode: vertical-lr;
+  writing-mode: vertical-rl;
   display: grid;
   place-items: center;
   font-size: 1.2rem;
@@ -202,11 +276,28 @@ width: 80%;}
 .text-wrapper h2 {
   font-size: 3rem;
   margin-bottom: 4rem;
+  width: fit-content;
+  position: relative;
+}
+
+.text-wrapper h2::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-1);
+  animation: opacity 0.8s 3s forwards;
+
+}
+@keyframes opacity {
+  to{width: 0;}
 }
 .text-wrapper p{
   padding: 1rem 0 1rem 3rem;
   position: relative;
 }
+
 
 .text-wrapper p::before{
   content: '';
@@ -230,11 +321,12 @@ width: 80%;}
 .social-wrapper {
   display: grid;
   height: 50%;
+  width: 5vw;
   grid-template-rows: repeat(3, 1fr);
-  align-items: center;
+  place-items: center;
   position: fixed;
   top: 50%;
-  right: 5%;
+  right: 0;
   transform: translateY(-50%);
 }
 
@@ -251,8 +343,8 @@ width: 80%;}
   height: 10vh;
   width: 90vw;
   place-items: center;
-  position: fixed;
-  bottom: 0;
+  /* position: fixed;
+  bottom: 0; */
 }
 .bottom-wrapper  a{margin-right: 1rem;}
 .button-wrapper {
@@ -265,6 +357,91 @@ width: 80%;}
 }
 .city-wrapper span{display: none;}
 .city-wrapper span.active {display: grid;}
+
+/* trending */
+.section h4{font-size: 2rem;}
+.section h2{font-size: 3rem;}
+
+
+.trending-wrapper.grid{
+  grid-template-columns: 40% 60%;
+  place-items: end end;
+}
+
+.trending-left img{
+  width: 50%;
+}
+
+.trending-left a{
+padding: 0;
+color: darkgray;
+border-bottom: 1px solid darkgray;}
+
+.trending-left a:hover{
+  opacity: .6;}
+
+  .trending-left a:hover::after{
+    width: 0;
+  }
+.sub.flex{
+  align-items: flex-end;
+}
+
+.sub img{margin-right: 1rem;}
+
+
+
+/* popular */
+
+.popular-wrapper{
+  padding: 10vh 0;
+  margin-bottom: 20vh;
+}
+
+.popular-wrapper.flex{
+  align-items: flex-end;
+  overflow: scroll;
+}
+.popular-article{
+  cursor: pointer;
+}
+.popular-article:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 12px;
+  transition: .3s ease-in-out;
+}
+.popular-article.flex{
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.popular-article small{color: darkgray;}
+
+.popular-article{width: 300px;
+margin: 0 1rem;}
+
+
+.popular-article picture{
+  width: 300px;
+  object-fit: cover;
+  position: relative;
+}
+.popular-article picture::after{
+  position: absolute;
+  content: '続きを読む';
+  display: grid;
+  top: 0;
+  left: 0;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  background: rgba(255, 255, 255, .6);
+}
+.popular-article picture:hover::after{
+ transform: scale(1);
+ transition: .3s ease-in-out;
+}
+
 
 @media screen and (max-width: 768px) {
   button {
