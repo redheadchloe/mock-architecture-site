@@ -395,7 +395,7 @@ border-bottom: 1px solid darkgray;}
 
 .popular-wrapper{
   padding: 10vh 0;
-  margin-bottom: 20vh;
+  /* margin-bottom: 20vh; */
 }
 
 .popular-wrapper.flex{
