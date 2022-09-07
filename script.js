@@ -24,7 +24,7 @@ const visuals = [
         'location': 'スペイン・マドリード',
     },
     {
-        'title': '光に包まれたルーフバルコニー',
+        'title': '光に包まれたバルコニー',
         'id': '02',
         'img': '02.avif',
         'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet asperiores quisquam assumenda earum autem inventore fugit repudiandae dignissimos maxime animi accusantium esse repellat obcaecati quasi minus quaerat rem sint nihil ab, officia iusto quibusdam praesentium. Quisquam, eligendi aut accusantium iusto quasi rerum dolor, at dolorem ad quaerat officia neque soluta.',
@@ -163,4 +163,44 @@ for (let i = 0; i < popular.length; i++) {
     <small class="m-1">${popular[i].date}</small>
     <h5>${popular[i].title}</h5>
 </div>`;
+}
+
+
+const series = [
+    {
+        'img': 'series/2.jpeg',
+        'date': '2022.08.15',
+        'title': 'タイトルがここに入ります。',
+        'text': '本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。'
+    },
+    {
+        'img': 'series/3.avif',
+        'date': '2022.08.15',
+        'title': 'タイトルがここに入ります。',
+        'text': '本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。'
+    },
+    {
+        'img': 'series/4.avif',
+        'date': '2022.08.15',
+        'title': 'タイトルがここに入ります。',
+        'text': '本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。'
+    },
+    {
+        'img': 'series/5.avif',
+        'date': '2022.08.15',
+        'title': 'タイトルがここに入ります。',
+        'text': '本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。本文がここに入ります。'
+    },
+]
+
+const archiveRight = document.querySelector('.archive-right');
+for (let i = 0; i < series.length; i++) {
+    archiveRight.innerHTML += `<div class="archive-item flex">
+    <img src="${series[i].img}" class="mr-1" alt="">
+    <div class="title">
+        <small>${series[i].date}</small>
+        <h4 class="m-1">${series[i].title}</h4>
+        <small>${series[i].text}</small>
+    </div>
+</div>`
 }

@@ -75,6 +75,9 @@ a.logo {
   margin: 1rem 0;
 }
 
+.mr-1{
+  margin-right: 1rem;
+}
 nav {
   padding: 2rem 0;
   display: grid;
@@ -204,9 +207,9 @@ button {
   position: relative;
 }
 
-img {
+.top-wrapper img {
   max-width: 600px;
-  max-height: 500px;
+  max-height: 600px;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -346,7 +349,7 @@ width: 80%;}
   /* position: fixed;
   bottom: 0; */
 }
-.bottom-wrapper  a{margin-right: 1rem;}
+
 .button-wrapper {
       justify-self: start;
 }
@@ -369,7 +372,8 @@ width: 80%;}
 }
 
 .trending-left img{
-  width: 50%;
+  max-width: 250px;
+  width: 100%;
 }
 
 .trending-left a{
@@ -387,13 +391,11 @@ border-bottom: 1px solid darkgray;}
   align-items: flex-end;
 }
 
-.sub img{margin-right: 1rem;}
-
 
 
 /* popular */
 
-.popular-wrapper{
+.popular-wrapper, .archive-wrapper{
   padding: 10vh 0;
   /* margin-bottom: 20vh; */
 }
@@ -414,14 +416,19 @@ border-bottom: 1px solid darkgray;}
   align-items: flex-start;
 }
 
-.popular-article small{color: darkgray;}
+small{color: darkgray;}
 
 .popular-article{width: 300px;
 margin: 0 1rem;}
 
-
-.popular-article picture{
-  width: 300px;
+.archive-left .archive-item img{
+  max-width: 600px;
+  width: 100%;
+  display: block;
+}
+.popular-article img, .archive-item img{
+  max-width: 300px;
+  width: 100%;
   object-fit: cover;
   position: relative;
 }
@@ -440,6 +447,27 @@ margin: 0 1rem;}
 .popular-article picture:hover::after{
  transform: scale(1);
  transition: .3s ease-in-out;
+}
+
+
+/* series */
+.archive-wrapper.grid{
+  place-items: stretch start;
+  grid-gap: 5vw;
+}
+
+.archive-left small{
+  flex-wrap: wrap;
+}
+
+.archive-right .archive-item:not(:last-of-type){margin-bottom: 1rem;}
+
+.archive-right .archive-item h4{
+  font-size: 1.2rem;
+}
+
+.archive-right .archive-item.flex{
+  align-items: flex-start;
 }
 
 
@@ -527,6 +555,7 @@ margin: 0 1rem;}
     grid-template-columns: auto;
     grid-gap: 5vh;
   }
+  .popular-wrapper.flex, .archive-item.flex{flex-direction: column;}
   .top-wrapper{
     min-height: 100vh;
     height: auto;
@@ -566,4 +595,20 @@ margin: 0 1rem;}
     align-items: center;
   }
 
+  .popular-wrapper, .archive-wrapper{
+    padding: 0 0 10vh;
+    /* margin-bottom: 20vh; */
+  }
+  .popular-wrapper.flex{
+    align-items: center;
+  }
+
+  .popular-article:not(:last-of-type){margin-bottom: 3rem;}
+
+  .archive-item h4{
+    font-size: 1.2rem;
+  }
+  .m-1{
+    margin: 0.5rem 0;
+  }
 }/*=============== max-width:600px ====================*/
