@@ -206,7 +206,7 @@ button {
 
 img {
   max-width: 600px;
-  max-height: 800px;
+  max-height: 500px;
   width: 100%;
   height: auto;
   object-fit: contain;
