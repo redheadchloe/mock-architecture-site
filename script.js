@@ -18,18 +18,18 @@ const visuals = [
     {
         'title': 'モダンなミニマリズム',
         'id': '01',
-        'img': '01.jpeg',
+        'img': '01.avif',
         'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet asperiores quisquam assumenda earum autem inventore fugit repudiandae dignissimos maxime animi accusantium esse repellat obcaecati quasi minus quaerat rem sint nihil ab, officia iusto quibusdam praesentium. Quisquam, eligendi aut accusantium iusto quasi rerum dolor, at dolorem ad quaerat officia neque soluta.',
         'color': '#325064',
-        'location': 'Paris, France',
+        'location': 'スペイン・マドリード',
     },
     {
-        'title': '有機的につながる',
+        'title': '光に包まれたルーフバルコニー',
         'id': '02',
-        'img': '02.jpeg',
+        'img': '02.avif',
         'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet asperiores quisquam assumenda earum autem inventore fugit repudiandae dignissimos maxime animi accusantium esse repellat obcaecati quasi minus quaerat rem sint nihil ab, officia iusto quibusdam praesentium. Quisquam, eligendi aut accusantium iusto quasi rerum dolor, at dolorem ad quaerat officia neque soluta.',
         'color': '#88736C',
-        'location': 'London, United Kingdom',
+        'location': 'フランス・モンペリエ',
     },
     {
         'title': 'ブティックホテルが並ぶ街',
@@ -37,7 +37,7 @@ const visuals = [
         'img': '03.jpeg',
         'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet asperiores quisquam assumenda earum autem inventore fugit repudiandae dignissimos maxime animi accusantium esse repellat obcaecati quasi minus quaerat rem sint nihil ab, officia iusto quibusdam praesentium. Quisquam, eligendi aut accusantium iusto quasi rerum dolor, at dolorem ad quaerat officia neque soluta.',
         'color': '#319180',
-        'location': 'New York, United States',
+        'location': 'アメリカ・ニューヨーク',
     },
     {
         'title': '131階の超高層電波塔',
@@ -45,15 +45,15 @@ const visuals = [
         'img': '04.jpeg',
         'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet asperiores quisquam assumenda earum autem inventore fugit repudiandae dignissimos maxime animi accusantium esse repellat obcaecati quasi minus quaerat rem sint nihil ab, officia iusto quibusdam praesentium. Quisquam, eligendi aut accusantium iusto quasi rerum dolor, at dolorem ad quaerat officia neque soluta.',
         'color': '#FFCF29',
-        'location': 'Toronto, Canada',
+        'location': 'カナダ・トロント',
     },
     {
-        'title': '光に包まれたルーフバルコニー',
+        'title': '有機的につながる',
         'id': '05',
-        'img': '05.jpeg',
+        'img': '05.avif',
         'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet asperiores quisquam assumenda earum autem inventore fugit repudiandae dignissimos maxime animi accusantium esse repellat obcaecati quasi minus quaerat rem sint nihil ab, officia iusto quibusdam praesentium. Quisquam, eligendi aut accusantium iusto quasi rerum dolor, at dolorem ad quaerat officia neque soluta.',
-        'color': '#AC442C',
-        'location': 'Tokyo, Japan',
+        'color': '#DB7642',
+        'location': 'イタリア・ミラノ',
     }
 ]
 
